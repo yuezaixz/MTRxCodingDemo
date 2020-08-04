@@ -8,13 +8,19 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, HasPreferenceService {
+
+    let preferenceServices = PreferenceService()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        if preferenceServices.isLoggedIn() {
+            self.navigationController?.setViewControllers([ProjectsViewController()], animated: true)
+        } else {
+            let viewController = LoginViewController.instantiate(withViewModel: LoginViewModel())
+            self.navigationController?.setViewControllers([viewController], animated: true)
+        }
     }
-
 
 }
 

@@ -3,13 +3,18 @@
 
 def base_pod
   pod 'Alamofire'
-  
+  pod 'RxSwift'
+  pod 'RxCocoa' 
 end
 
 def third_pod
   pod 'SnapKit', '~> 5.0.0'
   pod 'Kingfisher', '~> 5.6.0'
   pod 'MJRefresh'
+  pod 'KeychainSwift'
+  pod 'SwiftEntryKit'
+  pod 'lottie-ios'
+  pod 'HandyJSON', '~> 5.0.1'
 
 end
 
